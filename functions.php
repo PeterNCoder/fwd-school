@@ -157,6 +157,11 @@ add_action( 'wp_enqueue_scripts', 'fwd_school_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Custom Post Types & Taxonomies.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -177,16 +182,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-// Change excerpt length to 20 words
-function fwd_excerpt_length( $length ) {
-	return 20;
-}
-add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
-
-// Change excerpt [...] "more" to a link
-function fwd_excerpt_more( $more ) {
-	$more = '... <a class="read-more" href="'. esc_url( get_permalink() ) .'">Continue Reading about '. get_the_title() .'</a>';
-	return $more;
-}
-add_filter( 'excerpt_more', 'fwd_excerpt_more' );

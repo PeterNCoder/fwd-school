@@ -99,6 +99,8 @@ function fwd_school_setup() {
 			'flex-height' => true,
 		)
 	);
+	//Add theme support for Wide and Full alignment options
+	add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'fwd_school_setup' );
 

@@ -76,3 +76,15 @@ function fwd_rewrite_flush() {
     flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'fwd_rewrite_flush' );
+
+function wpb_change_title_text( $title ){
+    $screen = get_current_screen();
+
+    if  ( 'fwd-staff' == $screen->post_type ) {
+         $title = 'Add Staff Name';
+    }
+
+    return $title;
+}
+  
+add_filter( 'enter_title_here', 'wpb_change_title_text' );

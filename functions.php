@@ -46,6 +46,9 @@ function fwd_school_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	//Custom Image Crops
+	add_image_size( '200-300', 200, 300, true);
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -140,6 +143,13 @@ add_action( 'widgets_init', 'fwd_school_widgets_init' );
  * Enqueue scripts and styles.
  */
 function fwd_school_scripts() {
+	wp_enqueue_style( 
+		'fwd-googlefonts', 
+		'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap',		
+		array(),
+		null
+	);
+
 	wp_enqueue_style( 'fwd-school-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'fwd-school-style', 'rtl', 'replace' );
 

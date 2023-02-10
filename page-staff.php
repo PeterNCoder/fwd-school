@@ -21,7 +21,7 @@ get_header();
             
 		<header class="entry-header">
             <h1 class="entry-title">
-			<?php esc_html_e(get_the_title()); ?>
+                <?php the_title(); ?>
             </h1>
 		</header>
 

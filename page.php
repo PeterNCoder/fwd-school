@@ -22,6 +22,7 @@ get_header();
 			the_post();
 			get_template_part( 'template-parts/content', 'page' );
 
+			//Page 13 is the Schedule Page.
 			if(is_page(13)){
 				get_template_part( 'template-parts/course', 'schedule' );	
 			}

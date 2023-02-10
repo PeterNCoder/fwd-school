@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Media
 	- Captions
 	- Galleries
+	- Footer
 # plugins
 	- Jetpack infinite scroll
 # Utilities
@@ -535,17 +536,17 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: cornflowerblue;
 }
 
 a:visited {
-	color: #800080;
+	color: cornflowerblue;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	color: cornflowerblue;
 }
 
 a:focus {
@@ -650,14 +651,24 @@ textarea {
 /* Header
 --------------------------------------------- */
 
-/* .site-header {
+.site-header {
 	background-color: #111;
 	color: #fff;
+	height: 3.5rem;
+	border-top: 0.25rem solid cornflowerblue;
 }
 
-.site-header a {
+.site-title{
+	margin: 0.5rem;
+}
+
+.site-title a {
+	text-decoration: none;
 	color: #fff;
-} */
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
 
 /* Navigation
 --------------------------------------------- */
@@ -673,13 +684,8 @@ textarea {
 	padding-left: 0;
 }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+.main-navigation ul ul a {
+	background-color: #3d3d3d;
 }
 
 .main-navigation ul ul ul {
@@ -691,10 +697,6 @@ textarea {
 .main-navigation ul ul li.focus > ul {
 	display: block;
 	left: auto;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
 }
 
 .main-navigation ul li:hover > ul,
@@ -709,9 +711,27 @@ textarea {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	padding: 0.75rem;
+}
+
+.main-navigation a:hover {
+	background-color: cornflowerblue;
+	color: #fff;
 }
 
 /* Small menu. */
+.menu-toggle {
+    position: absolute;
+    z-index: 999;
+    right: 0.5rem;
+    top: 3.3rem;
+	background-color: transparent;
+	fill: #fff;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -761,8 +781,7 @@ textarea {
 	display: block;
 }
 
-.post,
-.page {
+.post {
 	margin: 0 0 1.5em;
 }
 
@@ -887,6 +906,17 @@ textarea {
 .gallery-caption {
 	display: block;
 }
+
+/* Footer
+--------------------------------------------- */
+
+.site-footer {
+	background-color: #3d3d3d;
+	color: #fff;
+	padding: 1rem;
+	margin-top: 1.5rem;
+}
+
 
 /*--------------------------------------------------------------
 # Plugins

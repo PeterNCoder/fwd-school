@@ -182,3 +182,22 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// Change excerpt length only on Students Archive
+function fwd_excerpt_length( $length ) {
+	if ( is_post_type_archive('fwd-students') ) {
+        return 25;
+	} else {
+		return $length;
+	}
+}
+add_filter( 'excerpt_length', 'fwd_excerpt_length', 999 );
+
+// Change excerpt [...] "more" to a link only on Students Archive
+function fwd_excerpt_more( $more ) {
+	if( is_post_type_archive('fwd-students') ) {
+	$more = '<a class="read-more" href="'. esc_url( get_permalink() ) .'">Read more about '. esc_html(get_the_title()) .'...</a>';
+	}
+	return $more;
+}
+add_filter( 'excerpt_more', 'fwd_excerpt_more' );

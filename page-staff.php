@@ -67,24 +67,24 @@ get_header();
                         if ( function_exists( 'get_field' ) ) {
                             ?>
                             <article class="staff-article">
-                            <?php
-                            if ( get_field( 'staff_biography' ) ) {
-                                ?>
-                                <h3> <?php esc_html_e( get_the_title()) ?></h3>
-                                <p> <?php esc_html_e(get_field( 'staff_biography' )); ?></p>
-                            <?php
-                            }
-                            if ( get_field( 'staff_courses' ) ) {
-                                ?>
-                                <p>Courses: <?php esc_html_e(get_field( 'staff_courses' )); ?> </p>
                                 <?php
-                            }
-                            if ( get_field( 'staff_website' ) ) {
+                                if ( get_field( 'staff_biography' ) ) {
+                                    ?>
+                                    <h3> <?php esc_html_e( get_the_title()) ?></h3>
+                                    <p> <?php esc_html_e(get_field( 'staff_biography' )); ?></p>
+                                <?php
+                                }
+                                if ( get_field( 'staff_courses' ) ) {
+                                    ?>
+                                    <p>Courses: <?php esc_html_e(get_field( 'staff_courses' )); ?> </p>
+                                    <?php
+                                }
+                                if ( get_field( 'staff_website' ) ) {
+                                    ?>
+                                    <a href="<?php echo esc_url(get_field( 'staff_website' )); ?>">Instructor Website</a>
+                                <?php
+                                }
                                 ?>
-                                <a href="<?php echo esc_url(get_field( 'staff_website' )); ?>">Instructor Website</a>
-                            <?php
-                            }
-                            ?>
                             </article>
                         <?php
                         }

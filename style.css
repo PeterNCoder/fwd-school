@@ -691,6 +691,14 @@ textarea {
 	text-transform: uppercase;
 }
 
+@media screen and (min-width: 40rem){
+	.site-header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
@@ -758,7 +766,7 @@ textarea {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 40rem) {
 
 	.menu-toggle {
 		display: none;
@@ -766,7 +774,26 @@ textarea {
 
 	.main-navigation ul {
 		display: flex;
+		justify-content: flex-end;
+		line-height: 1.75rem;
 	}
+
+	.sub-menu {
+		float: left;
+		position: absolute;
+		top: 100%;
+		left: -999em;
+		z-index: 99999;
+		display: flex;
+		flex-direction: column;
+		background-color: #010101;
+		width: 10rem;
+	}
+
+	.sub-menu a {
+		text-align: left;
+	}
+
 }
 
 .site-main .comment-navigation,
@@ -1100,7 +1127,7 @@ textarea {
 	width: auto;
 }
 
-@media (min-width: 25rem) {
+@media screen and (min-width: 25rem) {
 	.alignleft {
 
 		/*rtl:ignore*/
@@ -1122,7 +1149,7 @@ textarea {
 	}
 }
 
-@media (min-width: 81.25rem) {
+@media screen and (min-width: 81.25rem) {
 	.alignwide {
 		max-width: 1300px;
 		margin-left: -150px;

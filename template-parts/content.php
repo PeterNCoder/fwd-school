@@ -52,4 +52,4 @@
 	<footer class="entry-footer">
 		<?php fwd_school_entry_footer(); ?>
 	</footer>
-</article><?php the_ID(); ?>
+</article>

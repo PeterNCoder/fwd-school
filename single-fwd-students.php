@@ -23,7 +23,7 @@
 		</header>
  
 		<div class="entry-content">
-			 <?php the_post_thumbnail('200-300', array('class' => 'alignright')); ?>
+			 <?php the_post_thumbnail('medium', array('class' => 'alignright')); ?>
 			 <?php the_content(); ?>
 		</div>
 			 

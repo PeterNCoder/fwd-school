@@ -533,12 +533,14 @@ table {
 	width: 100%;
 }
 
-.schedule-table th, .schedule-table td {
+.schedule-table th, 
+.schedule-table td {
 	display: block;
 	text-align: left;
 }
 
-.schedule-table thead, .schedule-table tr:nth-child(even) {
+.schedule-table thead, 
+.schedule-table tr:nth-child(even) {
 	background-color: #00000015;
 }
 
@@ -547,6 +549,19 @@ table {
 	padding: 1rem;
 }
 
+@media screen and (min-width: 40rem) {
+	.schedule-table th,
+	.schedule-table td {
+	display: table-cell;
+	width: 33%;
+	padding: 1rem;
+	}
+
+	.schedule-table tr {
+		display: table-row;
+	}
+
+}
 
 /* Links
 --------------------------------------------- */
@@ -665,6 +680,35 @@ textarea {
 	padding: 0 1rem;
 }
 
+@media screen and (min-width: 50rem) {
+	.site {
+		max-width: 2200px;
+		display: grid;
+		grid-template-columns: 1fr minmax(0, 62.5rem) 1fr;
+		grid-template-areas:
+			"header header header"
+			". main ."
+			". sidebar ."
+			"footer footer footer";
+	}
+
+	.site-header {
+		grid-area: header;
+	}
+
+	.site-main {
+		grid-area: main;
+	}
+
+	.widget-area {
+		grid-area: sidebar;
+	}
+
+	.site-footer {
+		grid-area: footer;
+	}
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -673,10 +717,11 @@ textarea {
 --------------------------------------------- */
 
 .site-header {
-	background-color: #111;
+	background-color: #000;
 	color: #fff;
 	height: 3.5rem;
 	border-top: 0.25rem solid cornflowerblue;
+	width: 100%;
 }
 
 .site-title{
@@ -692,10 +737,11 @@ textarea {
 }
 
 @media screen and (min-width: 40rem){
-	.site-header {
-		width: 100%;
+	.header-flex {
 		display: flex;
 		justify-content: space-between;
+		max-width: 62.5rem;
+		margin: 0 auto;
 	}
 }
 
@@ -873,10 +919,20 @@ textarea {
 	padding: 1rem;
 }
 
+@media screen and (min-width: 40rem){
+	.home .news-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin: 0;
+		gap: 1rem;
+}
+}
+
 /* Page Archive - Students */
 
 .post-type-archive-fwd-students .student-article {
-	max-width: 12.5rem;
+	max-width: 18.75rem;
 	margin: 0 auto;
 }
 
@@ -884,10 +940,35 @@ textarea {
 	display: block;
 }
 
+@media screen and (min-width: 40rem){
+	.post-type-archive-fwd-students .students-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+}
+
 /* Page - Staff */
 
 .page-id-15 h2 {
+	width: 100%;
 	text-decoration: underline;
+}
+
+.page-id-15 .staff-courses {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 40rem){
+	.page-id-15 .staff-term-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.page-id-15 .staff-article {
+		width: 48%;
+	}
 }
 
 /* Page - News */
@@ -897,6 +978,16 @@ textarea {
 .blog .comments-links {
 	display: block;
 }
+
+@media screen and (min-width: 40rem){
+	.blog .cat-links,
+	.blog .tags-links,
+	.blog .comments-links {
+		display: inline;
+		margin-right: 2rem;
+	}
+}
+
 
 /* Comments
 --------------------------------------------- */
@@ -938,6 +1029,34 @@ textarea {
 
 .widget-area .wp-block-categories {
 	padding-left: 0;
+}
+
+.widget-area .wp-block-search__label {
+    display: none;
+}
+
+@media screen and (min-width: 50rem){
+	.widget-area {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.5rem;
+	}
+	.wp-block-search__inside-wrapper {
+		display: inline;
+	}
+	.wp-block-search__button {
+		margin-left: 0;
+		margin-top: 0.1rem;
+	}
+	.widget-area .widget_search {
+		padding-top: 1.5rem;
+		width: 25%;
+	}
+
+	.widget-area .widget_calendar {
+		padding-top: 1.5rem;
+	}
+
 }
 
 /* Media
@@ -1032,11 +1151,22 @@ textarea {
 --------------------------------------------- */
 
 .site-footer {
+	width: 100%;
 	background-color: #3d3d3d;
 	color: #fff;
 	padding: 1rem;
 	margin-top: 1.5rem;
 	clear: both;
+}
+
+@media screen and (min-width: 40rem){
+	.footer-flex {
+		display: flex;
+		justify-content: space-between;
+		max-width: 62.5rem;
+		margin: 0 auto;
+		align-items: center;
+	}
 }
 
 
@@ -1127,6 +1257,14 @@ textarea {
 	width: auto;
 }
 
+@media screen and (min-width: 81.25rem) {
+	.alignwide {
+		max-width: 1300px;
+		margin-left: -150px;
+		margin-right: -150px;
+	}
+}
+
 @media screen and (min-width: 25rem) {
 	.alignleft {
 
@@ -1146,13 +1284,5 @@ textarea {
 		/*rtl:ignore*/
 		margin-left: 1.5em;
 		margin-bottom: 1.5em;
-	}
-}
-
-@media screen and (min-width: 81.25rem) {
-	.alignwide {
-		max-width: 1300px;
-		margin-left: -150px;
-		margin-right: -150px;
 	}
 }

@@ -47,7 +47,7 @@ get_header();
 							<article class='student-article'>
 								<a href="<?php echo esc_url(get_the_permalink()); ?>">
 									<h2><?php esc_html_e(get_the_title()); ?></h2>
-									<?php the_post_thumbnail('200-300'); ?>
+									<?php the_post_thumbnail('300-200'); ?>
 								</a>
 								<?php the_excerpt(); ?>
 								<p>Specialty: 
@@ -59,7 +59,6 @@ get_header();
 							<?php
 						}
 					wp_reset_postdata();
-					echo "</section>";
 					} 
 				}
 			}

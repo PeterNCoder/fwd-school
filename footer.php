@@ -1,18 +1,13 @@
 <footer id="colophon" class="site-footer">
-	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fwd-school' ) ); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'fwd-school' ), 'WordPress' );
-			?>
-		</a>
-		<span class="sep"> | </span>
-			<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'fwd-school' ), 'fwd-school', '<a href="https://petervnguyen.com/">Peter Nguyen</a>' );
-			?>
-	</div><!-- .site-info -->
-</footer><!-- #colophon -->
+	<div class="footer-flex">
+		<p>Created by <a href="https://wp.bcitwebdeveloper.ca/" target="_blank" rel="noopener">Beata Kozma &amp; Jonathon Leathers</a>.
+		<br/>
+		Re-created by <a href="https://petervnguyen.com/" target="_blank" rel="noopener">Peter Nguyen</a>.
+		</p>
+
+		<p>Photos courtesy of <a href="https://burst.shopify.com/" target="_blank" rel="noopener">Burst</a>.</p>
+	</div>
+</footer>
 
 <?php wp_footer(); ?>
 

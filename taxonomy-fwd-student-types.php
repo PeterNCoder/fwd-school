@@ -3,14 +3,14 @@ get_header();
  ?>
  
  <main id="primary" class="site-main">
+
+ 	<header class="entry-header">
+		<h1><?php single_term_title(); ?> Students</h1>
+	</header>
  
 	<?php while ( have_posts() ) : the_post(); ?>
 	
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-			<header class="entry-header">
-				<h1><?php single_term_title(); ?> Students</h1>
-			</header>
 	
 			<div class="entry-content">
 				<h2 class="entry-title">

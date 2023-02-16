@@ -30,35 +30,37 @@ get_header();
 
             <section class="home-recent-news">
                 <h2><?php esc_html_e('Recent News', 'fwd'); ?></h2>
-                    <div class="news-content">
-                        <?php
-                        $args = array(
-                            'post_type' => 'post',
-                            'posts_per_page' => 3,
-                        );
+                <div class="news-content">
+                    <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 3,
+                    );
 
-                        $blog_query = new WP_Query( $args );
+                    $blog_query = new WP_Query( $args );
 
-                        if ( $blog_query -> have_posts() ) {
-                            while ( $blog_query -> have_posts() ) {
-                                $blog_query -> the_post();
-                                ?>
-                                <article class='recent-posts'>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('medium'); ?>
-                                        <h3><?php esc_html_e(get_the_title()); ?></h3>
-                                    </a>
-                                </article>
-                                <?php
-                            }
-                            wp_reset_postdata();
+                    if ( $blog_query -> have_posts() ) {
+                        while ( $blog_query -> have_posts() ) {
+                            $blog_query -> the_post();
+                            ?>
+                            <article class='recent-posts'>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                    <h3><?php esc_html_e(get_the_title()); ?></h3>
+                                </a>
+                            </article>
+                            <?php
                         }
-                        ?>
-
-                        <a href="<?php echo esc_url(get_post_type_archive_link( 'post' )); ?>">
-                        See All News
-                    </a>
+                        wp_reset_postdata();
+                    }
+                    ?>
+                    
                 </div>
+
+                <a href="<?php echo esc_url(get_post_type_archive_link( 'post' )); ?>">
+                    See All News
+                </a>
+                
             </section>
 
         <?php

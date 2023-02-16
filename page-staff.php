@@ -76,7 +76,7 @@ get_header();
                                 }
                                 if ( get_field( 'staff_courses' ) ) {
                                     ?>
-                                    <p>Courses: <?php esc_html_e(get_field( 'staff_courses' )); ?> </p>
+                                    <p class="staff-courses">Courses: <?php esc_html_e(get_field( 'staff_courses' )); ?> </p>
                                     <?php
                                 }
                                 if ( get_field( 'staff_website' ) ) {

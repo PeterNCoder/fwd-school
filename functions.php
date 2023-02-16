@@ -48,6 +48,7 @@ function fwd_school_setup() {
 
 	//Custom Image Crops
 	add_image_size( '200-300', 200, 300, true);
+	add_image_size( '300-200', 300, 200, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(

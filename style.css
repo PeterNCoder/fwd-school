@@ -929,6 +929,17 @@ textarea {
 		margin: 0;
 		gap: 1rem;
 	}
+
+}
+@media screen and (min-width: 50rem){
+	.home-lorem-ipsum .wp-block-group__inner-container {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.wp-block-group__inner-container .wp-block-group__inner-container {
+		display: unset;
+	}
 }
 
 /* Page Archive - Students */

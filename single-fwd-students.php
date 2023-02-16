@@ -1,12 +1,4 @@
 <?php
-/**
- * The template for displaying single student posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package FWD_School
- */
-
  get_header();
  ?>
  
@@ -30,12 +22,12 @@
 		<aside>
 
 	
-		<?php
+			<?php
 			$taxonomy = 'fwd-student-types';
 			$terms    = get_the_terms($post->ID, $taxonomy);
 
-			if($terms && ! is_wp_error($terms) ){
-				foreach($terms as $term){
+			if($terms && ! is_wp_error($terms) ) :
+				foreach($terms as $term) :
 					$args = array(
 						'post_type'      => 'fwd-students',
 						'posts_per_page' => -1,
@@ -52,11 +44,11 @@
 
 					$query = new WP_Query( $args );
 						
-					if ( $query -> have_posts() ) {
+					if ( $query -> have_posts() ) :
 						?>
 						<h2>Meet other <?php esc_html_e($term->name) ?> students:</h2>
 						<?php
-						while ( $query -> have_posts() ) {
+						while ( $query -> have_posts() ) :
 							$query -> the_post();
 							?>
 							<p> 
@@ -65,20 +57,20 @@
 								</a>
 							</p>
 							<?php
-						}
+						endwhile;
 						wp_reset_postdata();
-					}
-				}
-			}
+					endif;
+				endforeach;
+			endif;
 			?>
 
 		</aside>
 
 	 </article>
  
- <?php endwhile; ?>
+<?php endwhile; ?>
 
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_footer();

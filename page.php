@@ -1,17 +1,4 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package FWD_School
- */
-
 get_header();
 ?>
 
@@ -23,9 +10,9 @@ get_header();
 			get_template_part( 'template-parts/content', 'page' );
 
 			//Page 13 is the Schedule Page.
-			if(is_page(13)){
+			if(is_page(13)) :
 				get_template_part( 'template-parts/course', 'schedule' );	
-			}
+			endif;
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

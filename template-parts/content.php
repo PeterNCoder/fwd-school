@@ -1,14 +1,3 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package FWD_School
- */
-
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -25,11 +14,11 @@
 				fwd_school_posted_on();
 				fwd_school_posted_by();
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</header>
 
-	<?php fwd_school_post_thumbnail(); ?>
+	<?php fwd_school_post_thumbnail('medium'); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +26,6 @@
 			the_content(
 				sprintf(
 					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
 						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'fwd-school' ),
 						array(
 							'span' => array(
@@ -59,9 +47,9 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 		<?php fwd_school_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</footer>
+</article><?php the_ID(); ?>

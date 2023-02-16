@@ -722,6 +722,8 @@ textarea {
 	height: 3.5rem;
 	border-top: 0.25rem solid cornflowerblue;
 	width: 100%;
+	position: sticky;
+	top: 0;
 }
 
 .site-title{
@@ -799,9 +801,9 @@ textarea {
 /* Small menu. */
 .menu-toggle {
     position: absolute;
-    z-index: 999;
+    z-index: 9999;
     right: 0.5rem;
-    top: 3.3rem;
+    top: 0.25rem;
 	background-color: transparent;
 	fill: #fff;
 	border: none;
@@ -926,7 +928,7 @@ textarea {
 		justify-content: space-around;
 		margin: 0;
 		gap: 1rem;
-}
+	}
 }
 
 /* Page Archive - Students */

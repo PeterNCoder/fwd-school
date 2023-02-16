@@ -1,15 +1,3 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package FWD_School
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -44,7 +32,7 @@
 					?>
 					<p class="site-description"><?php echo $fwd_school_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php endif; ?>
-			</div><!-- .site-branding -->
+			</div>
 
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -62,6 +50,6 @@
 					)
 				);
 				?>
-			</nav><!-- #site-navigation -->
+			</nav>
 		</div>
-	</header><!-- #masthead -->
+	</header>

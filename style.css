@@ -533,10 +533,27 @@ table {
 	width: 100%;
 }
 
+.schedule-table th, .schedule-table td {
+	display: block;
+	text-align: left;
+}
+
+.schedule-table thead, .schedule-table tr:nth-child(even) {
+	background-color: #00000015;
+}
+
+.schedule-table tr {
+	display: block;
+	padding: 1rem;
+}
+
+
 /* Links
 --------------------------------------------- */
 a {
+	text-decoration: none;
 	color: cornflowerblue;
+	font-weight: 700;
 }
 
 a:visited {
@@ -644,6 +661,10 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 
+.site-main {
+	padding: 0 1rem;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -710,7 +731,6 @@ textarea {
 
 .main-navigation a {
 	display: block;
-	text-decoration: none;
 	text-align: center;
 	background-color: #000;
 	color: #fff;
@@ -730,6 +750,7 @@ textarea {
     top: 3.3rem;
 	background-color: transparent;
 	fill: #fff;
+	border: none;
 }
 
 .menu-toggle,
@@ -800,6 +821,56 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+/* Page - Home */
+
+.home .recent-posts {
+	margin-bottom: 0.5rem;
+}
+
+.home .recent-posts a {
+	position: relative;
+}
+
+.home .news-content {
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.home .recent-posts h3 {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	margin-bottom: 0.25rem;
+	background-color: #00000090;
+	text-align: center;
+	padding: 1rem;
+}
+
+/* Page Archive - Students */
+
+.post-type-archive-fwd-students .student-article {
+	max-width: 12.5rem;
+	margin: 0 auto;
+}
+
+.post-type-archive-fwd-students .read-more {
+	display: block;
+}
+
+/* Page - Staff */
+
+.page-id-15 h2 {
+	text-decoration: underline;
+}
+
+/* Page - News */
+
+.blog .cat-links,
+.blog .tags-links,
+.blog .comments-links {
+	display: block;
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -818,6 +889,28 @@ textarea {
 
 .widget select {
 	max-width: 100%;
+}
+
+.widget-area {
+	padding: 1rem 1rem 0;
+}
+
+.widget-area .wp-block-search__input {
+	border: 2px solid cornflowerblue;
+}
+
+.widget-area .wp-block-search__button {
+	color: cornflowerblue;
+	background-color: #000;
+	border: 2px solid cornflowerblue;
+}
+
+.widget-area .wp-block-latest-posts {
+	list-style: disc;
+}
+
+.widget-area .wp-block-categories {
+	padding-left: 0;
 }
 
 /* Media
@@ -859,6 +952,7 @@ textarea {
 
 /* Galleries
 --------------------------------------------- */
+
 .gallery {
 	margin-bottom: 1.5em;
 	display: grid;
@@ -915,6 +1009,7 @@ textarea {
 	color: #fff;
 	padding: 1rem;
 	margin-top: 1.5rem;
+	clear: both;
 }
 
 
@@ -984,25 +1079,6 @@ textarea {
 
 /* Alignments
 --------------------------------------------- */
-.alignleft {
-
-	/*rtl:ignore*/
-	float: left;
-
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
-}
-
-.alignright {
-
-	/*rtl:ignore*/
-	float: right;
-
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
-}
 
 .aligncenter {
 	clear: both;
@@ -1024,7 +1100,29 @@ textarea {
 	width: auto;
 }
 
-@media only screen and (min-width: 1300px) {
+@media (min-width: 25rem) {
+	.alignleft {
+
+		/*rtl:ignore*/
+		float: left;
+
+		/*rtl:ignore*/
+		margin-right: 1.5em;
+		margin-bottom: 1.5em;
+	}
+
+	.alignright {
+
+		/*rtl:ignore*/
+		float: right;
+
+		/*rtl:ignore*/
+		margin-left: 1.5em;
+		margin-bottom: 1.5em;
+	}
+}
+
+@media (min-width: 81.25rem) {
 	.alignwide {
 		max-width: 1300px;
 		margin-left: -150px;
